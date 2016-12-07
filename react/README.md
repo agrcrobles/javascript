@@ -104,7 +104,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     ```
   - **Higher-order Components Nomenclatura**: Componga el nombre del high order component y el nombre del component como `displayName` en el nuevo componente generado. Por ejemplo, el componente de orden superior `withFoo ()`, al pasar un componente `Bar` debería producir un componente con` displayName` de `withFoo (Bar)`.
 
-   > ¿Por qué? El `displayName` de un componente puede ser utilizado por herramientas de desarrollo o en mensajes de error, y tener un valor que exprese claramente esta relación ayuda a las personas a entender lo que está sucediendo.
+  > ¿Por qué? El `displayName` de un componente puede ser utilizado por herramientas de desarrollo o en mensajes de error, y tener un valor que exprese claramente esta relación ayuda a las personas a entender lo que está sucediendo.
 
     ```jsx
     // mal
@@ -130,8 +130,6 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     ```
 
   - **Props Naming**:  Evite usar nombres de props de componentes de DOM para diferentes propósitos.
-
-  > Why? People expect props like `style` and `className` to mean one specific thing. Varying this API for a subset of your app makes the code less readable and less maintainable, and may cause bugs.
 
   > ¿Por qué? La gente espera props como `style` y `className` signifiquen una cosa específica. La variación de esta API para una parte de la aplicación hace que el código sea menos legible y menos mantenible, y podria causar errores.
 
@@ -310,7 +308,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   - No utilice `accessKey` en elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-   > ¿Por qué? Ciertas inconsitencias entre shortcuts de teclado y comandos de teclado utilizados por personas que usan lectores de pantalla y teclados complican la accesibilidad.
+  > ¿Por qué? Ciertas inconsitencias entre shortcuts de teclado y comandos de teclado utilizados por personas que usan lectores de pantalla y teclados complican la accesibilidad.
 
   ```jsx
   // mal
@@ -340,9 +338,9 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
   ))}
   ```
 
-- Siempre defina DefaultProps de forma explícita para todos los props no requeridos.
+  - Siempre defina DefaultProps de forma explícita para todos los props no requeridos.
 
-   > ¿Por qué? Los PropTypes son una forma de documentación, y proporcionar DefaultProps significa que el lector de su código no tiene tanto que asumir. Además, puede significar que su código puede omitir ciertas comprobaciones de tipo.
+  > ¿Por qué? Los PropTypes son una forma de documentación, y proporcionar DefaultProps significa que el lector de su código no tiene tanto que asumir. Además, puede significar que su código puede omitir ciertas comprobaciones de tipo.
 
   ```jsx
   // mal
@@ -492,8 +490,8 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
       }
     }
     ```
-   - No utilice prefijo de _ (underscore) para los métodos internos de un componente React.
-   > ¿Por qué? Los prefijos _ (underscore) a veces se usan como una convención en otros idiomas para denotar privacidad. Pero, a diferencia de esas lenguajes, no hay soporte nativo para el ambito en JavaScript ya que todo es público. Independientemente de sus intenciones, agregar prefijos a sus propiedades en realidad no los hacen privados, y cualquier property debe ser tratado como público. Ver errores en [#1024](https://github.com/airbnb/javascript/issues/1024), and [#490](https://github.com/airbnb/javascript/issues/490) for a more in-depth discussion.
+  - No utilice prefijo de _ (underscore) para los métodos internos de un componente React.
+  > ¿Por qué? Los prefijos _ (underscore) a veces se usan como una convención en otros idiomas para denotar privacidad. Pero, a diferencia de esas lenguajes, no hay soporte nativo para el ambito en JavaScript ya que todo es público. Independientemente de sus intenciones, agregar prefijos a sus propiedades en realidad no los hacen privados, y cualquier property debe ser tratado como público. Ver errores en [#1024](https://github.com/airbnb/javascript/issues/1024), y [#490](https://github.com/airbnb/javascript/issues/490).
 
     ```jsx
     // mal
