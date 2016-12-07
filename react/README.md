@@ -21,14 +21,14 @@
 
 ## Reglas básicas
 
-   - Incluya sólo un componente React por archivo.
-     - Sin embargo, se admiten múltiples [Stateless, o Pure, Components] (https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) por archivo. Eslint: [`react / no-multi-comp`] (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-   - Siempre use la sintaxis de JSX.
-   - No utilice `React.createElement` a menos que esté inicializando la aplicación desde un archivo que no sea JSX.
+  - Incluya sólo un componente React por archivo.
+  - Sin embargo, se admiten múltiples [Stateless, o Pure, Components] (https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) por archivo. Eslint: [`react / no-multi-comp`] (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+  - Siempre use la sintaxis de JSX.
+  - No utilice `React.createElement` a menos que esté inicializando la aplicación desde un archivo que no sea JSX.
 
 ## Class vs `React.createClass` vs stateless
 
-   - Si el componente tiene estado y / o refs, elija `class extends React.Component` sobre` React.createClass` a menos que tenga una buena razón para usar mixins.
+  - Si el componente tiene estado y / o refs, elija `class extends React.Component` sobre` React.createClass` a menos que tenga una buena razón para usar mixins.
 eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
@@ -283,7 +283,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   - No utilice palabras como "imagen", "foto" o "imagen" en los soportes `<img>` `alt`eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-  > ¿Por qué? Los lectores de pantalla ya anuncian elementos `img` como imágenes, por lo que no es necesario incluir esta información en el texto alternativo.
+  > ¿Por qué? Los lectores de pantalla ya anuncian elementos `img` como imágenes, por lo que no es necesario incluir esta información en el texto alternativo.
 
     ```jsx
     // mal
@@ -308,7 +308,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   - No utilice `accessKey` en elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > ¿Por qué? Ciertas inconsitencias entre shortcuts de teclado y comandos de teclado utilizados por personas que usan lectores de pantalla y teclados complican la accesibilidad.
+  > ¿Por qué? Ciertas inconsitencias entre shortcuts de teclado y comandos de teclado utilizados por personas que usan lectores de pantalla y teclados complican la accesibilidad.
 
   ```jsx
   // mal
