@@ -4,18 +4,18 @@
 
 ## Table de contenido
 
-  1. [Reglas básicas](#basic-rules)
+  1. [Reglas básicas](#reglas-básicas)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [Nomenclatura](#naming)
-  1. [Declaraciones](#declaration)
-  1. [Indentación](#alignment)
-  1. [Comillas](#quotes)
-  1. [Espaciado](#spacing)
+  1. [Nomenclatura](#nomenclature)
+  1. [Declaraciones](#declaraciones)
+  1. [Indentación](#indentacion)
+  1. [Comillas](#comillas)
+  1. [Espaciado](#espaciado)
   1. [Props](#props)
   1. [Refs](#refs)
-  1. [Parentesis](#parentheses)
+  1. [Parentesis](#parentesis)
   1. [Tags](#tags)
-  1. [Metodos](#methods)
+  1. [Metodos](#metodos)
   1. [Orden](#ordering)
   1. [`isMounted`](#ismounted)
 
