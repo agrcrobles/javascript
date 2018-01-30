@@ -102,7 +102,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     // bien
     import Footer from './Footer';
     ```
-  - **Higher-order Components Nomenclatura**: Componga el nombre del high order component y el nombre del component como `displayName` en el nuevo componente generado. Por ejemplo, el componente de orden superior `withFoo ()`, al pasar un componente `Bar` debería producir un componente con` displayName` de `withFoo (Bar)`.
+  - **Nomenclatura 'Higher-order Components'**: Componga el nombre del high order component y el nombre del component como `displayName` en el nuevo componente generado. Por ejemplo, el componente de orden superior `withFoo ()`, al pasar un componente `Bar` debería producir un componente con` displayName` de `withFoo (Bar)`.
 
   > ¿Por qué? El `displayName` de un componente puede ser utilizado por herramientas de desarrollo o en mensajes de error, y tener un valor que exprese claramente esta relación ayuda a las personas a entender lo que está sucediendo.
 
@@ -172,10 +172,10 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
       anotherSuperLongParam="baz"
     />
 
-    // if props fit in one line then keep it on the same line
+    // Si existe solo una props, puede mantenerse en una sola línea.
     <Foo bar="bar" />
 
-    // children get indented normally
+    // Al existir más de una props se debe separar por línea
     <Foo
       superLongParam="bar"
       anotherSuperLongParam="baz"
@@ -212,7 +212,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     // mal
     <Foo/>
 
-    // very mal
+    // muy mal
     <Foo                 />
 
     // mal
@@ -318,7 +318,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
   <div />
   ```
 
-  - Evite utilizar `key` como prop del indice del array, elija un unique ID. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - Evite utilizar `key` como prop del índice del array, elija un unique ID. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
   ```jsx
   // mal
@@ -385,7 +385,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
 ## Parentesis
 
-  - Cerrar JSX tags con parentesis cuando sean span in mas de una linea. eslint: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md)
+  - Cerrar JSX tags con paréntesis cuando se tenga más de una línea a retornar. eslint: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md)
 
     ```jsx
     // mal
@@ -404,7 +404,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
       );
     }
 
-    // bien, when single line
+    // bien, en caso de que solo ocupe una sola línea.
     render() {
       const body = <div>hello</div>;
       return <MyComponent>{body}</MyComponent>;
@@ -423,7 +423,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     <Foo className="stuff" />
     ```
 
-  - If tu componente tiene multi-line properties, cierre su tag en una nueva linea. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - Si el componente tiene varias propiedades, cierre su tag en una nueva línea. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // mal
