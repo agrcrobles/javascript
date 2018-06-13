@@ -2,7 +2,7 @@
 
 *Un enfoque razonable para React y JSX*
 
-## Table de contenido
+## Tabla de contenido
 
   1. [Reglas básicas](#reglas-básicas)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
@@ -13,7 +13,7 @@
   1. [Espaciado](#espaciado)
   1. [Props](#props)
   1. [Refs](#refs)
-  1. [Parentesis](#parentesis)
+  1. [Paréntesis](#parentesis)
   1. [Tags](#tags)
   1. [Metodos](#metodos)
   1. [Orden](#ordering)
@@ -72,9 +72,9 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
 ## Nomenclatura
 
-  - **Extensiones**: Use la extension `.jsx` para componentes React.
+  - **Extensiones**: Use la extensión `.jsx` para componentes React.
   - **Nombre de archivos**: Use PascalCase para el nombre de los archivos. Ejemplo, `ReservationCard.jsx`.
-  - **Nomenclature de referencia**: Use PascalCase para componentes React y camelCase para sus instancias. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **Nomenclatura de referencia**: Use PascalCase para componentes React y camelCase para sus instancias. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
     // mal
@@ -157,7 +157,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
     }
     ```
 
-## Indentacion
+## Indentación
 
   - Siga estos estilos de indentacion para la sintaxis de JSX. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
@@ -609,7 +609,7 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
-## Traduccion
+## Traducción
 
   Esta guía de estilo JSX / React también está disponible en otros idiomas:
 
