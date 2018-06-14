@@ -106,40 +106,40 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   > ¿Por qué? El `displayName` de un componente puede ser utilizado por herramientas de desarrollo o en mensajes de error, y tener un valor que exprese claramente esta relación ayuda a las personas a entender lo que está sucediendo.
 
-    ```jsx
-    // mal
-    export default function withFoo(WrappedComponent) {
-      return function WithFoo(props) {
-        return <WrappedComponent {...props} foo />;
-      }
+  ```jsx
+  // mal
+  export default function withFoo(WrappedComponent) {
+    return function WithFoo(props) {
+      return <WrappedComponent {...props} foo />;
+    }
+  }
+
+  // bien
+  export default function withFoo(WrappedComponent) {
+    function WithFoo(props) {
+      return <WrappedComponent {...props} foo />;
     }
 
-    // bien
-    export default function withFoo(WrappedComponent) {
-      function WithFoo(props) {
-        return <WrappedComponent {...props} foo />;
-      }
+    const wrappedComponentName = WrappedComponent.displayName
+      || WrappedComponent.name
+      || 'Component';
 
-      const wrappedComponentName = WrappedComponent.displayName
-        || WrappedComponent.name
-        || 'Component';
-
-      WithFoo.displayName = `withFoo(${wrappedComponentName})`;
-      return WithFoo;
-    }
-    ```
+    WithFoo.displayName = `withFoo(${wrappedComponentName})`;
+    return WithFoo;
+  }
+  ```
 
   - **Props Naming**:  Evite usar nombres de props de componentes de DOM para diferentes propósitos.
 
   > ¿Por qué? La gente espera props como `style` y `className` signifiquen una cosa específica. La variación de esta API para una parte de la aplicación hace que el código sea menos legible y menos mantenible, y podria causar errores.
 
-    ```jsx
-    // mal
-    <MyComponent style="fancy" />
+  ```jsx
+  // mal
+  <MyComponent style="fancy" />
 
-    // bien
-    <MyComponent variant="fancy" />
-    ```
+  // bien
+  <MyComponent variant="fancy" />
+  ```
 
 ## Declaraciones
 
@@ -190,19 +190,19 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   > ¿Por qué? Los atributos HTML suelen usar comillas dobles en lugar de simples, por lo que los atributos JSX reflejan esta convención.
 
-    ```jsx
-    // mal
-    <Foo bar='bar' />
+  ```jsx
+  // mal
+  <Foo bar='bar' />
 
-    // bien
-    <Foo bar="bar" />
+  // bien
+  <Foo bar="bar" />
 
-    // mal
-    <Foo style={{ left: "20px" }} />
+  // mal
+  <Foo style={{ left: "20px" }} />
 
-    // bien
-    <Foo style={{ left: '20px' }} />
-    ```
+  // bien
+  <Foo style={{ left: '20px' }} />
+  ```
 
 ## Espaciado
 
@@ -285,13 +285,13 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   > ¿Por qué? Los lectores de pantalla ya anuncian elementos `img` como imágenes, por lo que no es necesario incluir esta información en el texto alternativo.
 
-    ```jsx
-    // mal
-    <img src="hello.jpg" alt="Picture of me waving hello" />
+  ```jsx
+  // mal
+  <img src="hello.jpg" alt="Picture of me waving hello" />
 
-    // bien
-    <img src="hello.jpg" alt="Me waving hello" />
-    ```
+  // bien
+  <img src="hello.jpg" alt="Me waving hello" />
+  ```
 
   - Use solamente validos y no abstractos [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
@@ -461,57 +461,58 @@ eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-re
 
   > ¿Por qué? Una llamada de bind en render crea una función nueva en cada render.
 
-    ```jsx
-    // mal
-    class extends React.Component {
-      onClickDiv() {
-        // do stuff
-      }
-
-      render() {
-        return <div onClick={this.onClickDiv.bind(this)} />
-      }
+  ```jsx
+  // mal
+  class extends React.Component {
+    onClickDiv() {
+      // do stuff
     }
 
-    // bien
-    class extends React.Component {
-      constructor(props) {
-        super(props);
-
-        this.onClickDiv = this.onClickDiv.bind(this);
-      }
-
-      onClickDiv() {
-        // do stuff
-      }
-
-      render() {
-        return <div onClick={this.onClickDiv} />
-      }
+    render() {
+      return <div onClick={this.onClickDiv.bind(this)} />
     }
-    ```
+  }
+
+  // bien
+  class extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.onClickDiv = this.onClickDiv.bind(this);
+    }
+
+    onClickDiv() {
+      // do stuff
+    }
+
+    render() {
+      return <div onClick={this.onClickDiv} />
+    }
+  }
+  ```
+
   - No utilice prefijo de _ (underscore) para los métodos internos de un componente React.
   > ¿Por qué? Los prefijos _ (underscore) a veces se usan como una convención en otros idiomas para denotar privacidad. Pero, a diferencia de esas lenguajes, no hay soporte nativo para el ambito en JavaScript ya que todo es público. Independientemente de sus intenciones, agregar prefijos a sus propiedades en realidad no los hacen privados, y cualquier property debe ser tratado como público. Ver errores en [#1024](https://github.com/airbnb/javascript/issues/1024), y [#490](https://github.com/airbnb/javascript/issues/490).
 
-    ```jsx
-    // mal
-    React.createClass({
-      _onClickSubmit() {
-        // do stuff
-      },
+  ```jsx
+  // mal
+  React.createClass({
+    _onClickSubmit() {
+      // do stuff
+    },
 
-      // other stuff
-    });
+    // other stuff
+  });
 
-    // bien
-    class extends React.Component {
-      onClickSubmit() {
-        // do stuff
-      }
-
-      // other stuff
+  // bien
+  class extends React.Component {
+    onClickSubmit() {
+      // do stuff
     }
-    ```
+
+    // other stuff
+  }
+  ```
 
   - Asegúrese de devolver un valor en sus métodos `render`. eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
 
